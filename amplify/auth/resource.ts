@@ -15,10 +15,6 @@ export const auth = defineAuth({
       loginWithAmazon: {
         clientId: secret('LOGINWITHAMAZON_CLIENT_ID'),
         clientSecret: secret('LOGINWITHAMAZON_CLIENT_SECRET'),
-        scopes: ['email'],
-        attributeMapping: {
-          email: 'email'
-        }
       },
       callbackUrls: [
         'http://localhost:3000/',
