@@ -28,11 +28,12 @@ function App() {
     <Authenticator>
       {({ signOut, user }) => (
         <main>
+          <div>{JSON.stringify(user)}</div>
           <h1>{user?.signInDetails?.loginId}'s todos</h1>
           <button onClick={createTodo}>+ new</button>
           <ul>
             {todos.map((todo) => (
-              <li 
+              <li
                 onClick={() => deleteTodo(todo.id)}
                 key={todo.id}>
                 {todo.content}
@@ -41,14 +42,14 @@ function App() {
           </ul>
           <div>
             🥳 App successfully hosted. Try creating a new todo.
-            <br />
+            <br/>
             <a href="https://docs.amplify.aws/react/start/quickstart/#make-frontend-updates">
               Review next step of this tutorial.
             </a>
           </div>
           <button onClick={signOut}>Sign out</button>
         </main>
-    
+
       )}
     </Authenticator>
   );
